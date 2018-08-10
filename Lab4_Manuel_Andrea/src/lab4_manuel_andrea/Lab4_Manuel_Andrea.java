@@ -5,16 +5,43 @@ import java.util.Scanner;
 
 public class Lab4_Manuel_Andrea {
 
+    static Scanner s = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner s = new Scanner(System.in);
         ArrayList<EVA> EVAs = new ArrayList();
         ArrayList<ANGELES> Angeles = new ArrayList();
         ArrayList<Piloto> Pilotos = new ArrayList();
+        String[][] T = new String[10][10];
+        llenar(T);
+        T[9][0] = "PM ";
+        T[9][9] = "PM ";
+        T[9][2] = "PM ";
+        T[9][7] = "PM ";
+        T[9][3] = "EV0";
+        T[9][4] = "EV1";
+        T[9][5] = "EV2";
+        T[9][6] = "EV0";
+
+        T[0][2] = " R ";
+        T[0][7] = " R ";
+
+        T[1][1] = " Z ";
+        T[3][2] = " Z ";
+        T[1][8] = " Z ";
+        T[3][7] = " Z ";
+
+        T[1][4] = " S ";
+        T[1][5] = " S ";
+        print(T);
         EVAs.add(new EVA());
         EVAs.add(new EVA());
         Angeles.add(new ANGELES());
         Angeles.add(new ANGELES());
+        Pilotos.add(new Piloto());
+        Pilotos.add(new Piloto());
+        Pilotos.add(new Piloto());
+        Pilotos.add(new Piloto());
         System.out.println("");
         System.out.println("MAGI init\n"
                 + "Bienvenido a Nerv \n"
@@ -28,7 +55,7 @@ public class Lab4_Manuel_Andrea {
                 + "........-:::-...-:::-::+WWWWWWWWWWWWWWWWW@#WWWW@@-......... \n"
                 + "..........#WW@-...#...=WW+@WWWWWWWWWWWWWWW@#+.............. \n"
                 + "..........=.#WW=..=...=WW-.#WWWWWWWWWWWWWWWWWW@-........... \n"
-                + "..........=..:WWW:=...=WW#@@.:WWWWWWWWWWWWWWWWW#........... \n"
+                + "..........=..:WWW:=...=WW#@@.:tWWWWWWWWWWWWWWWWW#........... \n"
                 + "..........=....=WW#...=WW-.*..-*WWWWWWWWWWWWWWWW#.......... \n"
                 + "..........#.....-@#...=WW:...*#..*WWWWWWWWWWWWWWW:......... \n"
                 + "..................-................=WWWWWWWWWWWWW#......... \n"
@@ -119,7 +146,7 @@ public class Lab4_Manuel_Andrea {
                                 for (EVA ev : EVAs) {
                                     System.out.println(EVAs.indexOf(ev) + ".- " + ev);
                                 }
-                                System.out.print("Ingrese el número correspondiente al EVA que desea asignar.");
+                                System.out.print("Ingrese el número correspondiente al EVA que desea asignar: ");
                                 int eva = s.nextInt();
                                 ((Piloto) Pilotos.get(pos)).setAsignado(EVAs.get(eva));
                                 break;
@@ -154,17 +181,77 @@ public class Lab4_Manuel_Andrea {
                         System.out.print("Ingrese el número correspondiente al EVA que desea asignar.");
                         int eva = s.nextInt();
                         EVA v = EVAs.get(eva);
-                        Pilotos.add(new Piloto(n,e,nf,enc,esc,sync,v));
+                        Pilotos.add(new Piloto(n, e, nf, enc, esc, sync, v));
                     default:
                 }
                 break;
             case "D":
+                System.out.println("A L E R T A ! ! !");
+                System.out.println("Tipo de Sangre Azul CONFIRMADO");
+                System.out.println("Comienza despliegue de las unidades . . .");
+                print(T);
+                Eva(T);
                 break;
             case "E":
                 System.exit(0);
                 break;
             default:
 
+        }
+
+    }
+
+    public static void print(String[][] M) { // Imprimir matriz de String
+        for (int i = 0; i < M.length; i++) {
+            for (int j = 0; j < M[i].length; j++) {
+                System.out.print("[" + M[i][j] + "]");
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void llenar(String[][] M) { // Imprimir matriz de String
+        for (int i = 0; i < M.length; i++) {
+            for (int j = 0; j < M[i].length; j++) {
+                M[i][j] = "   ";
+            }
+            System.out.println();
+        }
+    }
+
+    public static void Eva(String[][] M) {
+        System.out.println("Elija un EVA ingreasando sus coordenadas:");
+        System.out.print(" X --> ");
+        int x = s.nextInt();
+        System.out.print(" Y --> ");
+        int y = s.nextInt();
+        while (!(M[x][y].contains("EV") || M[x][y].contains("MP"))) {
+            System.out.println("Las coordenadas ingresadas no pertenecen a una EVA.\n Ingrese nuevas coordenadas.");
+            System.out.print(" X --> ");
+            x = s.nextInt();
+            System.out.print(" Y --> ");
+            y = s.nextInt();
+        }
+        System.out.println(M[x][y] + " seleccionada.\n¿Qué desea hacer?\n A.- Mover\n B.- Atacar");
+        String resp = s.next();
+        Ancestrales J;
+        if (M[x][y] == "PM") {
+            J = new EVAPM();
+        } else if (M[x][y] == "EV0") {
+            J = new EVA00();
+        } else if (M[x][y] == "EV1") {
+            J = new EVA01();
+        } else {
+            J = new EVA02();
+        }
+        if (resp == "A") {
+            System.out.println("Ingrese las coordenadas para moverse:");
+            System.out.print(" X --> ");
+            int x2 = s.nextInt();
+            System.out.print(" Y --> ");
+            int y2 = s.nextInt();
+            J.movimiento(x2, y2, x, y);
         }
     }
 
