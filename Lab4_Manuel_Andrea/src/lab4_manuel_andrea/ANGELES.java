@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4_manuel_andrea;
 
 import java.awt.Color;
 
-/**
- *
- * @author mevl1
- */
 public class ANGELES extends Ancestrales {
+
     private Color color;
     private String descripcion;
     private String sangre;
@@ -91,14 +83,13 @@ public class ANGELES extends Ancestrales {
     }
 
     @Override
-    public boolean movimiento(int x, int y,int x_actual,int y_actual) {
+    public boolean movimiento(int x, int y, int x_actual, int y_actual) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean ataque(int x, int y,int x_actual,int y_actual) {
+    public boolean ataque(int x, int y, int x_actual, int y_actual) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }
