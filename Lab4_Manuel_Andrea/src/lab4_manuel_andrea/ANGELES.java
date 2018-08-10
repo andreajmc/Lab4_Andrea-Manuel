@@ -11,7 +11,7 @@ import java.awt.Color;
  *
  * @author mevl1
  */
-public class ANGELES {
+public class ANGELES extends Ancestrales {
     private Color color;
     private String descripcion;
     private String sangre;
@@ -88,6 +88,16 @@ public class ANGELES {
 
     public void setPotencia(int potencia) {
         this.potencia = potencia;
+    }
+
+    @Override
+    public boolean movimiento() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean ataque() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
