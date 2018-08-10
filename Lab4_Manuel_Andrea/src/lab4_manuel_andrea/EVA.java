@@ -15,12 +15,12 @@ public class EVA extends Ancestrales {
     private double daño;
 
     @Override
-    public boolean movimiento() {
+    public boolean movimiento(int x, int y,int x_actual,int y_actual) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean ataque() {
+    public boolean ataque(int x, int y,int x_actual,int y_actual) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
