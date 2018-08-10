@@ -254,20 +254,5 @@ public class Lab4_Manuel_Andrea {
             J.movimiento(x2, y2, x, y);
         }
     }
-/*public void mov(int x,int y,int x_actual,int y_actual,String [][] tab){
-     if (tab[x_actual][y_actual].equals("F")) {
-                    coordenadas_viejas = coordenadas_nuevas;
-                    val_dragon = dragon.movimineto(x, y, x_viejo, y_viejo);
 
-                    if (val_dragon == true) {
-                        tab[x_viejo][y_viejo] = " ";
-                        tab[x][y] = "F";
-                        impr(tab);
-                    } else {
-                        System.out.println("ingreso coordenadas no validas, perdio turno2"
-                                + "");
-                    }
-}
-}
-*/
 }
