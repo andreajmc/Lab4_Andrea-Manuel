@@ -20,5 +20,12 @@ public class RAMIEL extends ANGELES {
     public RAMIEL(Color color, String descripcion, String sangre, String fecha, String nombre, String volar, int potencia) {
         super(color, descripcion, sangre, fecha, nombre, volar, potencia);
     }
-    
+     public  boolean movimiento(int x,int y,int x_actual,int y_actual){
+         boolean t=false;
+         return t;
+     }
+      public boolean  ataque(int x,int y , int x_actual,int y_actual){
+          boolean t=false;
+          return t;
+      }
 }
