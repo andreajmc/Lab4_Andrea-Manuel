@@ -1,22 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4_manuel_andrea;
-
-/**
- *
- * @author mevl1
- */
 public class Lab4_Manuel_Andrea {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("hola mundo");
+     public static void main(String[] args) {
+         System.out.println("");
+         System.out.println("MAGI init\n"
+                 + "Bienvenido a Nerv \n" +
+"............................-*@WWWWWWWWWWWW+............... \n" +
+"...........................+WWWWWWWWWWWWWW+................ \n" +
+"................**.........@WWWWWWWWWWWWWWWWW@+............ \n" +
+"................=W+........#WWWWWWWWWWWWWWWWWWWWW=......... \n" +
+"..................#@-.....+WWWWWWWWWWWWWWWWWWWWWWWW+....... \n" +
+"....................#=...=WWWWWWWWWWWWWWWWWWWWWWWWWW@...... \n" +
+".....................-#WWWWWWWWWWWWWWWWWWWWWWWWWWWW#=...... \n" +
+"........-:::-...-:::-::+WWWWWWWWWWWWWWWWW@#WWWW@@-......... \n" +
+"..........#WW@-...#...=WW+@WWWWWWWWWWWWWWW@#+.............. \n" +
+"..........=.#WW=..=...=WW-.#WWWWWWWWWWWWWWWWWW@-........... \n" +
+"..........=..:WWW:=...=WW#@@.:WWWWWWWWWWWWWWWWW#........... \n" +
+"..........=....=WW#...=WW-.*..-*WWWWWWWWWWWWWWWW#.......... \n" +
+"..........#.....-@#...=WW:...*#..*WWWWWWWWWWWWWWW:......... \n" +
+"..................-................=WWWWWWWWWWWWW#......... \n" +
+"........................:WW#+*@W=.-#WWWWWWWWWWWWWW=........ \n" +
+"........................-WW=...WW#..@WW#WWWWWWWWWW=........ \n" +
+"........................-WW=..*WW:..-@W@-#WWWWWWWW#........ \n" +
+"........................-WW=:WW@.....-WW#++@WWWWWW#........ \n" +
+"........................-WW=..#WW+....:WW+..-@WWWW#........ \n" +
+".......................:=@@@+-.+@@#:...+*.....-@WW=........ \n" +
+"................................................:WW........ \n" +
+"OPCIONES \n\nElija una opción: \n" +
+"A-Lista de EVAs \n"
+                 + "B-Lista de Angeles \n"
+                 + "C-CRUD Pilotos \n  1-Listar \n  2-Modificar datos \n  3-Eliminar \n  4-Crea");
     }
     
 }
