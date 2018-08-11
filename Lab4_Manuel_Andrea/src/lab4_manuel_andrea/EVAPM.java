@@ -11,7 +11,9 @@ public class EVAPM extends EVA {
     }
 
     public boolean ataque(int x, int y, int x_actual, int y_actual) {
-        return false;
+        boolean t=false;
+        
+        return t;
     }
 
 }
