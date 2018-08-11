@@ -189,8 +189,12 @@ public class Lab4_Manuel_Andrea {
                 System.out.println("A L E R T A ! ! !");
                 System.out.println("Tipo de Sangre Azul CONFIRMADO");
                 System.out.println("Comienza despliegue de las unidades . . .");
+                while (CheckWinner(T) == false) {
                 print(T);
                 Eva(T);
+                print(T);
+                Angeles(T);
+                }
                 break;
             case "E":
                 System.exit(0);
@@ -245,14 +249,134 @@ public class Lab4_Manuel_Andrea {
         } else {
             J = new EVA02();
         }
-        if (resp == "A") {
+        if (resp.equalsIgnoreCase("A")) {
             System.out.println("Ingrese las coordenadas para moverse:");
             System.out.print(" X --> ");
             int x2 = s.nextInt();
             System.out.print(" Y --> ");
             int y2 = s.nextInt();
-            J.movimiento(x2, y2, x, y);
+            boolean b = J.movimiento(x2, y2, x, y);
+
+            while (b == false) {
+                System.out.println("Las coordenadas ingresadas no son válidas.\n Ingrese nuevas coordenadas.");
+                System.out.print(" X --> ");
+                x = s.nextInt();
+                System.out.print(" Y --> ");
+                y = s.nextInt();
+                b = J.movimiento(x2, y2, x, y);
+            }
+
+            M[x2][y2] = M[x][y];
+            M[x][y] = "   ";
+
+        } else if (resp.equalsIgnoreCase("B")) {
+            System.out.println("Ingrese las coordenadas para atacar:");
+            System.out.print(" X --> ");
+            int x2 = s.nextInt();
+            System.out.print(" Y --> ");
+            int y2 = s.nextInt();
+            boolean b = J.ataque(x2, y2, x, y);
+            while (b == false) {
+                System.out.println("Las coordenadas ingresadas no son válidas.\n Ingrese nuevas coordenadas.");
+                System.out.print(" X --> ");
+                x = s.nextInt();
+                System.out.print(" Y --> ");
+                y = s.nextInt();
+                b = J.ataque(x2, y2, x, y);
+            }
+            
+            // falta lo del ataque
+            M[x2][y2] = M[x][y];
+            M[x][y] = " * "; // Falta trazar ataque
         }
     }
 
+    public static void Angeles(String[][] M) {
+        System.out.println("Elija un ANGEL ingreasando sus coordenadas:");
+        System.out.print(" X --> ");
+        int x = s.nextInt();
+        System.out.print(" Y --> ");
+        int y = s.nextInt();
+        while ((M[x][y].contains("EV") || M[x][y].contains("MP"))) {
+            System.out.println("Las coordenadas ingresadas no pertenecen a una ANGEL.\n Ingrese nuevas coordenadas.");
+            System.out.print(" X --> ");
+            x = s.nextInt();
+            System.out.print(" Y --> ");
+            y = s.nextInt();
+        }
+        System.out.println(M[x][y] + " seleccionada.\n¿Qué desea hacer?\n A.- Mover\n B.- Atacar");
+        String resp = s.next();
+        Ancestrales J;
+        if (M[x][y] == " Z ") {
+            J = new ZERUEL();
+        } else if (M[x][y] == " R ") {
+            J = new RAMIEL();
+        } else {
+            J = new SACHIEL();
+        }
+        if (resp.equalsIgnoreCase("A")) {
+            System.out.println("Ingrese las coordenadas para moverse:");
+            System.out.print(" X --> ");
+            int x2 = s.nextInt();
+            System.out.print(" Y --> ");
+            int y2 = s.nextInt();
+            boolean b = J.movimiento(x2, y2, x, y);
+
+            while (b == false) {
+                System.out.println("Las coordenadas ingresadas no son válidas.\n Ingrese nuevas coordenadas.");
+                System.out.print(" X --> ");
+                x = s.nextInt();
+                System.out.print(" Y --> ");
+                y = s.nextInt();
+                b = J.movimiento(x2, y2, x, y);
+            }
+
+            M[x2][y2] = M[x][y];
+            M[x][y] = "   ";
+
+        } else if (resp.equalsIgnoreCase("B")) {
+            System.out.println("Ingrese las coordenadas para atacar:");
+            System.out.print(" X --> ");
+            int x2 = s.nextInt();
+            System.out.print(" Y --> ");
+            int y2 = s.nextInt();
+            boolean b = J.ataque(x2, y2, x, y);
+            while (b == false) {
+                System.out.println("Las coordenadas ingresadas no son válidas.\n Ingrese nuevas coordenadas.");
+                System.out.print(" X --> ");
+                x = s.nextInt();
+                System.out.print(" Y --> ");
+                y = s.nextInt();
+                b = J.ataque(x2, y2, x, y);
+            }
+            M[x2][y2] = M[x][y];
+            M[x][y] = " * "; // Falta trazar ataque
+        }
+    }
+    
+    public static boolean CheckWinner(String[][]M) {
+        int contE = 0;
+        int contA = 0;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if ((M[i][j].contains("EV")) || M[i][j].contains("PM")) {
+                    ++contE;
+                } else if (M[i][j] == "   ") {
+                    contE = contE;
+                    contA = contA;
+                } else {
+                    ++contA;
+                }
+            }
+        }
+        if (contA == 0) {
+            System.out.println("¡Han ganado los EVAs!");
+            return true;
+        } else if (contE == 0) {
+            System.out.println("¡Han ganado los ÁNGELES!");
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
