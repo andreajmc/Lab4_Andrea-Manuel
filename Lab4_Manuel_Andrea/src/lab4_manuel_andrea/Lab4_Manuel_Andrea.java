@@ -199,8 +199,6 @@ public class Lab4_Manuel_Andrea {
             case "E":
                 System.exit(0);
                 break;
-            default:
-
         }
 
     }
