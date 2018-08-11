@@ -6,11 +6,13 @@ import java.util.Scanner;
 public class Lab4_Manuel_Andrea {
 
     static Scanner s = new Scanner(System.in);
+    static ArrayList<EVA> EVAs = new ArrayList();
+    static ArrayList<ANGELES> Angeles = new ArrayList();
+    
 
     public static void main(String[] args) {
 
-        ArrayList<EVA> EVAs = new ArrayList();
-        ArrayList<ANGELES> Angeles = new ArrayList();
+        
         ArrayList<Piloto> Pilotos = new ArrayList();
         String[][] T = new String[10][10];
         llenar(T);
@@ -199,6 +201,10 @@ public class Lab4_Manuel_Andrea {
             case "E":
                 System.exit(0);
                 break;
+
+            default:
+                System.out.println("Ingresó una opción inválida. Ingrese un nuevo dato.");
+                resp = s.next();
         }
 
     }
@@ -269,7 +275,6 @@ public class Lab4_Manuel_Andrea {
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Las coordenadas seleccionadas son inválidas. Turno Finalizado.\n");
             }
-           
 
         } else if (resp.equalsIgnoreCase("B")) {
             System.out.println("Ingrese las coordenadas para atacar:");
@@ -288,8 +293,17 @@ public class Lab4_Manuel_Andrea {
             }
 
             // falta lo del ataque
-            // if (
-            M[x][y] = " * "; // Falta trazar ataque
+            if (M[x2][y2] != "   ") {
+                if (M[x][y] == " Z ") {
+
+                } else if (M[x][y] == " R ") {
+                    J = new RAMIEL();
+                } else {
+                    J = new SACHIEL();
+                }
+
+            }
+            M[x2][y2] = " * "; // Falta trazar ataque
         }
     }
 
@@ -355,8 +369,18 @@ public class Lab4_Manuel_Andrea {
                 y2 = s.nextInt();
                 b = J.ataque(x2, y2, x, y);
             }
-            M[x2][y2] = M[x][y];
-            M[x][y] = " * "; // Falta trazar ataque
+            if (M[x2][y2] != "   ") {
+                if (M[x][y] == "PM") {
+                    // ((EVAPM) EVAs.get(0)).setCont(((EVAPM) EVAs.get(0)).setCont()-1);
+                } else if (M[x][y] == "EV0") {
+                    J = new EVA00();
+                } else if (M[x][y] == "EV1") {
+                    J = new EVA01();
+                } else {
+                    J = new EVA02();
+                }
+                M[x2][y2] = " * "; // Falta trazar ataque
+            }
         }
     }
 

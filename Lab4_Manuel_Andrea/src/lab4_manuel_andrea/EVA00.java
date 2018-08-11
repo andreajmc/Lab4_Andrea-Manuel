@@ -3,7 +3,7 @@ package lab4_manuel_andrea;
 import java.awt.Color;
 
 public class EVA00 extends EVA {
-
+private int cont = 5;
     public EVA00() {
         super();
     }
@@ -53,6 +53,10 @@ public class EVA00 extends EVA {
             t=true;
         }
         return t;
+    }
+    
+     public void setCont(int cont) {
+        this.cont = cont;
     }
     
 }
