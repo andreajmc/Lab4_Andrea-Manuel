@@ -34,6 +34,7 @@ public class RAMIEL extends ANGELES {
      }
       public boolean  ataque(int x,int y , int x_actual,int y_actual){
           boolean t=false;
+         
           return t;
       }
 }

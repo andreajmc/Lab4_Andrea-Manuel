@@ -27,6 +27,7 @@ public class SACHIEL extends ANGELES {
     @Override
       public boolean  ataque(int x,int y , int x_actual,int y_actual){
           boolean t=false;
+          
           return t;
       }
     
