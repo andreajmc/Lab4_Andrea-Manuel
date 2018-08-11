@@ -9,11 +9,9 @@ public class Lab4_Manuel_Andrea {
     static Scanner s = new Scanner(System.in);
     static ArrayList<EVA> EVAs = new ArrayList();
     static ArrayList<ANGELES> Angeles = new ArrayList();
-    
 
     public static void main(String[] args) {
 
-        
         ArrayList<Piloto> Pilotos = new ArrayList();
         String[][] T = new String[10][10];
         llenar(T);
@@ -36,19 +34,17 @@ public class Lab4_Manuel_Andrea {
 
         T[1][4] = " S ";
         T[1][5] = " S ";
-        print(T);
-        Color c;
-        
-        EVAs.add(new EVA00(Color.YELLOW, 2019, 1.7,"Persona 1",5,"Honduras",new Piloto(),102,50.5));    
-        EVAs.add(new EVA00(Color.BLACK, 2019, 1.7,"Persona 2",5,"Honduras",new Piloto(),103,50.5));
-        EVAs.add(new EVA01(Color.red, 2019, 1.7,"Persona 3",5,"Honduras",new Piloto(),104,50.5));
-        EVAs.add(new EVA02(Color.PINK, 2019, 1.7,"Persona 4",5,"Honduras",new Piloto(),105,50.5));
-        EVAs.add(new EVAPM(Color.BLUE, 2019, 1.7,"Persona 5",5,"Honduras",null,106,50.5));
-        EVAs.add(new EVA00(Color.CYAN, 2019, 1.7,"Persona 6",5,"Honduras",new Piloto(),107,50.5));
-        EVAs.add(new EVA02(Color.CYAN, 2019, 1.7,"Persona 7",5,"Honduras",new Piloto(),108,50.5));
-        EVAs.add(new EVAPM(Color.GREEN, 2019, 1.7,"Persona 8",5,"Honduras",null,109,50.5));
-        EVAs.add(new EVA00(Color.DARK_GRAY, 2019, 1.7,"Persona 9",5,"Honduras",new Piloto(),110,50.5));
-        
+
+        EVAs.add(new EVA00(Color.YELLOW, 2019, 1.7, "Persona 1", 5, "Honduras", new Piloto(), 102, 50.5));
+        EVAs.add(new EVA00(Color.BLACK, 2019, 1.7, "Persona 2", 5, "Honduras", new Piloto(), 103, 50.5));
+        EVAs.add(new EVA01(Color.red, 2019, 1.7, "Persona 3", 5, "Honduras", new Piloto(), 104, 50.5));
+        EVAs.add(new EVA02(Color.PINK, 2019, 1.7, "Persona 4", 5, "Honduras", new Piloto(), 105, 50.5));
+        EVAs.add(new EVAPM(Color.BLUE, 2019, 1.7, "Persona 5", 5, "Honduras", null, 106, 50.5));
+        EVAs.add(new EVA00(Color.CYAN, 2019, 1.7, "Persona 6", 5, "Honduras", new Piloto(), 107, 50.5));
+        EVAs.add(new EVA02(Color.CYAN, 2019, 1.7, "Persona 7", 5, "Honduras", new Piloto(), 108, 50.5));
+        EVAs.add(new EVAPM(Color.GREEN, 2019, 1.7, "Persona 8", 5, "Honduras", null, 109, 50.5));
+        EVAs.add(new EVA00(Color.DARK_GRAY, 2019, 1.7, "Persona 9", 5, "Honduras", new Piloto(), 110, 50.5));
+
         Angeles.add(new ANGELES());
         Angeles.add(new ANGELES());
         Angeles.add(new ANGELES());
@@ -57,11 +53,11 @@ public class Lab4_Manuel_Andrea {
         Angeles.add(new ANGELES());
         Angeles.add(new ANGELES());
         Angeles.add(new ANGELES());
-        
-        Pilotos.add(new Piloto("Mario", 18, "Juan", "Pedro", "Escuela1",87.6,EVAs.get(0)));
-        Pilotos.add(new Piloto("Peter", 18, "JuanP", "Pedro", "Escuela1",45.2,EVAs.get(1)));
-        Pilotos.add(new Piloto("Manuel", 18, "JuanP", "Pedro", "Escuela1",45.2,EVAs.get(2)));
-        Pilotos.add(new Piloto("Jose", 18, "JuanP", "Pedro", "Escuela1",45.2,EVAs.get(3)));
+
+        Pilotos.add(new Piloto("Mario", 18, "Juan", "Pedro", "Escuela1", 87.6, EVAs.get(0)));
+        Pilotos.add(new Piloto("Peter", 18, "JuanP", "Pedro", "Escuela1", 45.2, EVAs.get(1)));
+        Pilotos.add(new Piloto("Manuel", 18, "JuanP", "Pedro", "Escuela1", 45.2, EVAs.get(2)));
+        Pilotos.add(new Piloto("Jose", 18, "JuanP", "Pedro", "Escuela1", 45.2, EVAs.get(3)));
         System.out.println("");
         System.out.println("MAGI init\n"
                 + "Bienvenido a Nerv \n"
@@ -97,12 +93,12 @@ public class Lab4_Manuel_Andrea {
         switch (resp) {
             case "A":
                 for (EVA e : EVAs) {
-                    System.out.println(e);
+                    System.out.println(EVAs.indexOf(e) + ".- " + e);
                 }
                 break;
             case "B":
                 for (ANGELES a : Angeles) {
-                    System.out.println(a);
+                    System.out.println(Angeles.indexOf(a) + ".- " + a);
                 }
                 break;
             case "C":
@@ -389,13 +385,13 @@ public class Lab4_Manuel_Andrea {
             }
             if (M[x2][y2] != "   ") {
                 if (M[x][y] == "PM") {
-                // ((EVAPM) EVAs.get(0)).setCont(((EVAPM) EVAs.get(0)).getCont()-1);
+                    // ((EVAPM) EVAs.get(0)).setCont(((EVAPM) EVAs.get(0)).getCont()-1);
                 } else if (M[x][y] == "EV0") {
-                ((EVA00) EVAs.get(0)).setCont(((EVA00) EVAs.get(0)).getCont()-1);
+                    ((EVA00) EVAs.get(0)).setCont(((EVA00) EVAs.get(0)).getCont() - 1);
                 } else if (M[x][y] == "EV1") {
-                ((EVA01) EVAs.get(0)).setCont(((EVA01) EVAs.get(0)).getCont()-1);
+                    ((EVA01) EVAs.get(0)).setCont(((EVA01) EVAs.get(0)).getCont() - 1);
                 } else {
-                ((EVA02) EVAs.get(0)).setCont(((EVA02) EVAs.get(0)).getCont()-1);
+                    ((EVA02) EVAs.get(0)).setCont(((EVA02) EVAs.get(0)).getCont() - 1);
                 }
                 M[x2][y2] = " * "; // Falta trazar ataque
             }
