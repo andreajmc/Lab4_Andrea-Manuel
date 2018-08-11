@@ -48,5 +48,9 @@ private int cont = 5;
         }
         return t;
     }
+    
+     public int getCont() {
+        return cont;
+    }
 
 }

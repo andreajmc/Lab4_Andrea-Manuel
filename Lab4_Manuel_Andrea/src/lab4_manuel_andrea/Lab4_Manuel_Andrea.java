@@ -371,13 +371,13 @@ public class Lab4_Manuel_Andrea {
             }
             if (M[x2][y2] != "   ") {
                 if (M[x][y] == "PM") {
-                    // ((EVAPM) EVAs.get(0)).setCont(((EVAPM) EVAs.get(0)).setCont()-1);
+                // ((EVAPM) EVAs.get(0)).setCont(((EVAPM) EVAs.get(0)).getCont()-1);
                 } else if (M[x][y] == "EV0") {
-                    J = new EVA00();
+                ((EVA00) EVAs.get(0)).setCont(((EVA00) EVAs.get(0)).getCont()-1);
                 } else if (M[x][y] == "EV1") {
-                    J = new EVA01();
+                ((EVA01) EVAs.get(0)).setCont(((EVA01) EVAs.get(0)).getCont()-1);
                 } else {
-                    J = new EVA02();
+                ((EVA02) EVAs.get(0)).setCont(((EVA02) EVAs.get(0)).getCont()-1);
                 }
                 M[x2][y2] = " * "; // Falta trazar ataque
             }

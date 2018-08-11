@@ -58,5 +58,9 @@ private int cont = 5;
      public void setCont(int cont) {
         this.cont = cont;
     }
+     
+      public int getCont() {
+        return cont;
+    }
     
 }
