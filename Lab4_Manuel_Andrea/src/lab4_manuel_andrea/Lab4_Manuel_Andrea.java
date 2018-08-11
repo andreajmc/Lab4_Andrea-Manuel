@@ -1,5 +1,6 @@
 package lab4_manuel_andrea;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,14 +37,31 @@ public class Lab4_Manuel_Andrea {
         T[1][4] = " S ";
         T[1][5] = " S ";
         print(T);
-        EVAs.add(new EVA());
-        EVAs.add(new EVA());
+        Color c;
+        
+        EVAs.add(new EVA00(Color.YELLOW, 2019, 1.7,"Persona 1",5,"Honduras",new Piloto(),102,50.5));    
+        EVAs.add(new EVA00(Color.BLACK, 2019, 1.7,"Persona 2",5,"Honduras",new Piloto(),103,50.5));
+        EVAs.add(new EVA01(Color.red, 2019, 1.7,"Persona 3",5,"Honduras",new Piloto(),104,50.5));
+        EVAs.add(new EVA02(Color.PINK, 2019, 1.7,"Persona 4",5,"Honduras",new Piloto(),105,50.5));
+        EVAs.add(new EVAPM(Color.BLUE, 2019, 1.7,"Persona 5",5,"Honduras",null,106,50.5));
+        EVAs.add(new EVA00(Color.CYAN, 2019, 1.7,"Persona 6",5,"Honduras",new Piloto(),107,50.5));
+        EVAs.add(new EVA02(Color.CYAN, 2019, 1.7,"Persona 7",5,"Honduras",new Piloto(),108,50.5));
+        EVAs.add(new EVAPM(Color.GREEN, 2019, 1.7,"Persona 8",5,"Honduras",null,109,50.5));
+        EVAs.add(new EVA00(Color.DARK_GRAY, 2019, 1.7,"Persona 9",5,"Honduras",new Piloto(),110,50.5));
+        
         Angeles.add(new ANGELES());
         Angeles.add(new ANGELES());
-        Pilotos.add(new Piloto());
-        Pilotos.add(new Piloto());
-        Pilotos.add(new Piloto());
-        Pilotos.add(new Piloto());
+        Angeles.add(new ANGELES());
+        Angeles.add(new ANGELES());
+        Angeles.add(new ANGELES());
+        Angeles.add(new ANGELES());
+        Angeles.add(new ANGELES());
+        Angeles.add(new ANGELES());
+        
+        Pilotos.add(new Piloto("Mario", 18, "Juan", "Pedro", "Escuela1",87.6,EVAs.get(0)));
+        Pilotos.add(new Piloto("Peter", 18, "JuanP", "Pedro", "Escuela1",45.2,EVAs.get(1)));
+        Pilotos.add(new Piloto("Manuel", 18, "JuanP", "Pedro", "Escuela1",45.2,EVAs.get(2)));
+        Pilotos.add(new Piloto("Jose", 18, "JuanP", "Pedro", "Escuela1",45.2,EVAs.get(3)));
         System.out.println("");
         System.out.println("MAGI init\n"
                 + "Bienvenido a Nerv \n"

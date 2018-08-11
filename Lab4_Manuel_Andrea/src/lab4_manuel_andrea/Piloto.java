@@ -77,6 +77,13 @@ public class Piloto {
     public void setAsignado(EVA asignado) {
         this.asignado = asignado;
     }
+
+    @Override
+    public String toString() {
+        return "Piloto{" + "Nombre: " + nombre + ", Edad: " + edad + ", Familiar: " + fam + ", Encargado: " + encargado + ", Escuela: " + escuela + ", Sincronización: " + sinc + ", Asignado: " + asignado + '}';
+    }
+    
+    
     
     
 }

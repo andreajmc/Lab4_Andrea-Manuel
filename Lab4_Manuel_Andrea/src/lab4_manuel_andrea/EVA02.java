@@ -1,10 +1,19 @@
 package lab4_manuel_andrea;
 
+import java.awt.Color;
+
 public class EVA02 extends EVA {
 private int cont = 5;
 
  public void setCont(int cont) {
         this.cont = cont;
+    }
+
+    public EVA02(Color C, int añop, double alt, String alma, int ojos, String pais, Piloto P, int codigo, double daño) {
+        super(C, añop, alt, alma, ojos, pais, P, codigo, daño);
+    }
+
+    public EVA02() {
     }
  
     public boolean movimiento(int x, int y, int x_actual, int y_actual) {

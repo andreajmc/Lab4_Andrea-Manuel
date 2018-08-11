@@ -92,4 +92,11 @@ public class ANGELES extends Ancestrales {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public String toString() {
+        return "ANGELES{" + "Color: " + color + ", Descripción: " + descripcion + ", Sangre: " + sangre + ", Fecha: " + fecha + ", Nombre: " + nombre + ", Volar: " + volar + ", Potencia:" + potencia + '}';
+    }
+    
+    
+
 }
