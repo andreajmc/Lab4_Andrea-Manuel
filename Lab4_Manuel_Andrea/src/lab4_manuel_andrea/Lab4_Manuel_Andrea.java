@@ -190,10 +190,10 @@ public class Lab4_Manuel_Andrea {
                 System.out.println("Tipo de Sangre Azul CONFIRMADO");
                 System.out.println("Comienza despliegue de las unidades . . .");
                 while (CheckWinner(T) == false) {
-                print(T);
-                Eva(T);
-                print(T);
-                Angeles(T);
+                    print(T);
+                    Eva(T);
+                    print(T);
+                    Angeles(T);
                 }
                 break;
             case "E":
@@ -228,7 +228,7 @@ public class Lab4_Manuel_Andrea {
         int x = s.nextInt();
         System.out.print(" Y --> ");
         int y = s.nextInt();
-        while (!(M[x][y].contains("EV") || M[x][y].contains("MP"))) {
+        while (!(M[x][y].contains("EV") || M[x][y].contains("PM"))) {
             System.out.println("Las coordenadas ingresadas no pertenecen a una EVA.\n Ingrese nuevas coordenadas.");
             System.out.print(" X --> ");
             x = s.nextInt();
@@ -263,9 +263,13 @@ public class Lab4_Manuel_Andrea {
                 y = s.nextInt();
                 b = J.movimiento(x2, y2, x, y);
             }
-
-            M[x2][y2] = M[x][y];
-            M[x][y] = "   ";
+            try {
+                M[x2][y2] = M[x][y];
+                M[x][y] = "   ";
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Las coordenadas seleccionadas son inválidas. Turno Finalizado.\n");
+            }
+           
 
         } else if (resp.equalsIgnoreCase("B")) {
             System.out.println("Ingrese las coordenadas para atacar:");
@@ -277,14 +281,14 @@ public class Lab4_Manuel_Andrea {
             while (b == false) {
                 System.out.println("Las coordenadas ingresadas no son válidas.\n Ingrese nuevas coordenadas.");
                 System.out.print(" X --> ");
-                x = s.nextInt();
+                x2 = s.nextInt();
                 System.out.print(" Y --> ");
-                y = s.nextInt();
+                y2 = s.nextInt();
                 b = J.ataque(x2, y2, x, y);
             }
-            
+
             // falta lo del ataque
-            M[x2][y2] = M[x][y];
+            // if (
             M[x][y] = " * "; // Falta trazar ataque
         }
     }
@@ -295,7 +299,7 @@ public class Lab4_Manuel_Andrea {
         int x = s.nextInt();
         System.out.print(" Y --> ");
         int y = s.nextInt();
-        while ((M[x][y].contains("EV") || M[x][y].contains("MP"))) {
+        while ((M[x][y].contains("EV") || M[x][y].contains("PM"))) {
             System.out.println("Las coordenadas ingresadas no pertenecen a una ANGEL.\n Ingrese nuevas coordenadas.");
             System.out.print(" X --> ");
             x = s.nextInt();
@@ -329,8 +333,12 @@ public class Lab4_Manuel_Andrea {
                 b = J.movimiento(x2, y2, x, y);
             }
 
-            M[x2][y2] = M[x][y];
-            M[x][y] = "   ";
+            try {
+                M[x2][y2] = M[x][y];
+                M[x][y] = "   ";
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Las coordenadas seleccionadas son inválidas. Turno Finalizado.\n");
+            }
 
         } else if (resp.equalsIgnoreCase("B")) {
             System.out.println("Ingrese las coordenadas para atacar:");
@@ -342,17 +350,17 @@ public class Lab4_Manuel_Andrea {
             while (b == false) {
                 System.out.println("Las coordenadas ingresadas no son válidas.\n Ingrese nuevas coordenadas.");
                 System.out.print(" X --> ");
-                x = s.nextInt();
+                x2 = s.nextInt();
                 System.out.print(" Y --> ");
-                y = s.nextInt();
+                y2 = s.nextInt();
                 b = J.ataque(x2, y2, x, y);
             }
             M[x2][y2] = M[x][y];
             M[x][y] = " * "; // Falta trazar ataque
         }
     }
-    
-    public static boolean CheckWinner(String[][]M) {
+
+    public static boolean CheckWinner(String[][] M) {
         int contE = 0;
         int contA = 0;
         for (int i = 0; i < 10; i++) {
