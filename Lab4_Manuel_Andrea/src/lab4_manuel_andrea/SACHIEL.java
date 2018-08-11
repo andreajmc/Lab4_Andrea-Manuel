@@ -27,7 +27,13 @@ public class SACHIEL extends ANGELES {
     @Override
       public boolean  ataque(int x,int y , int x_actual,int y_actual){
           boolean t=false;
-          
+          if (x==x_actual && y>=y_actual-3) {
+              t=true;
+          }
+          if (x==x_actual && y==y_actual+3) {
+              t=true;
+          }
+         
           return t;
       }
     
